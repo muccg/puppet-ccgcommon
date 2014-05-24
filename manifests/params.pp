@@ -6,7 +6,7 @@ class ccgcommon::params {
   case $::operatingsystem {
 
     'CentOS': {
-      $source_packages = ['gcc', 'gcc-c++', 'make', 'autoconf']
+      $source_packages = ['gcc', 'gcc-c++', 'make', 'autoconf', 'rpm-build', 'createrepo', 'redhat-rpm-config']
     }
 
     'Debian', 'Ubuntu': {
