@@ -22,4 +22,12 @@ class ccgcommon (
       group  => $ssh_user
     }
   }
+
+  # Some puppet modules expect /usr/local/bin to exist
+  # puppetlabs/postgresql is one example
+  file {'/usr/local/bin':
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root'
+  }
 }
