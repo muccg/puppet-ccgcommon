@@ -1,6 +1,8 @@
 #
 class ccgcommon (
-  $timezone=$ccgcommon::params::timezone
+  $timezone=$ccgcommon::params::timezone,
+  $rsyslog_tcp=false,
+  $rsyslog_udp=false,
 ) inherits ccgcommon::params {
 
   include stdlib
@@ -8,8 +10,14 @@ class ccgcommon (
   include repo::update
   include ccgcommon::sudoers
 
+  class { 'rsyslog::server':
+    enable_tcp => $rsyslog_tcp,
+    enable_udp => $rsyslog_udp,
+  }
+
   class { 'timezone':
     timezone => $timezone,
+    notify   => Class['rsyslog::service'],
   }
 
   # $ssh_user is a fact injected by ccgplatform
