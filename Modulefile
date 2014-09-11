@@ -1,5 +1,5 @@
 name         'muccg-ccgcommon'
-version      '1.1.0'
+version      '1.2.0'
 
 author       'Centre for Comparative Genomics'
 license      'GNU GPL Version 3'
@@ -10,4 +10,4 @@ description  'Stages, Timezone, Repo setup.'
 
 dependency 'puppetlabs/stdlib', '>=3.2.1 <5.0.0'
 dependency 'saz/timezone', '>=3.0.1 <3.1.0'
-dependency 'saz/rsyslog', '>=2.2.1 <2.3.0'
+dependency 'netmanagers/fail2ban', '>=1.4.0 <2.0.0'
