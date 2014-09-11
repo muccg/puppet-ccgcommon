@@ -18,6 +18,11 @@ class ccgcommon (
     require  => Class['timezone'],
   }
 
+  exec { '/bin/hostname `cat ccg_hostname`':
+    onlyif => '/usr/bin/stat /etc/ccg_hostname',
+    notify => Class['rsyslog::service'],
+  }
+
   # $ssh_user is a fact injected by ccgplatform
   # under ccgplatform the workflow requires a working dir
   # for $ssh_user
