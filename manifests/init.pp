@@ -18,7 +18,7 @@ class ccgcommon (
     require  => Class['timezone'],
   }
 
-  exec { '/bin/hostname `cat ccg_hostname`':
+  exec { '/bin/hostname `cat /etc/ccg_hostname`':
     onlyif => '/usr/bin/stat /etc/ccg_hostname',
     notify => Class['rsyslog::service'],
   }
