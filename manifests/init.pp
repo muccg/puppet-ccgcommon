@@ -10,7 +10,6 @@ class ccgcommon (
 
   class { 'timezone':
     timezone => $timezone,
-    notify   => Class['rsyslog::service'],
   }
 
   class { 'fail2ban':
@@ -20,7 +19,6 @@ class ccgcommon (
 
   exec { '/bin/hostname `cat /etc/ccg_hostname`':
     onlyif => '/usr/bin/stat /etc/ccg_hostname',
-    notify => Class['rsyslog::service'],
   }
 
   # $ssh_user is a fact injected by ccgplatform
