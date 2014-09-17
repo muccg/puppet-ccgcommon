@@ -19,10 +19,10 @@ class ccgcommon (
   }
 
   if $hostname != undef {
-    exec { "/bin/hostname $hostname": }
+    exec { "/bin/hostname ${hostname}": }
 
     file { '/etc/hostname':
-      content => "$hostname",
+      content => $hostname,
     }
   }
 
