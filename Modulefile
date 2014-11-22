@@ -1,5 +1,5 @@
 name         'muccg-ccgcommon'
-version      '1.2.4'
+version      '1.3.0'
 
 author       'Centre for Comparative Genomics'
 license      'GNU GPL Version 3'
