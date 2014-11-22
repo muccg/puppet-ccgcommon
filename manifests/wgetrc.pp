@@ -12,6 +12,6 @@ class ccgcommon::wgetrc (
 
 class ccgcommon::wgetrc::sydney {
   class { 'ccgcommon::wgetrc':
-    http_proxy => 'ccg-syd-nginx-staging.ec2.ccgapps.com.au',
+    http_proxy => 'http://ccg-syd-nginx-staging.ec2.ccgapps.com.au:3128',
   }
 }
