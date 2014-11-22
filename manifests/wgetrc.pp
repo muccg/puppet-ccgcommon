@@ -10,7 +10,7 @@ class ccgcommon::wgetrc (
 }
 
 
-class ccgcommon::sydney-wgetrc {
+class ccgcommon::wgetrc::sydney {
   class { 'ccgcommon::wgetrc':
     http_proxy => 'ccg-syd-nginx-staging.ec2.ccgapps.com.au',
   }
