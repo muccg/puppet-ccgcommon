@@ -9,3 +9,10 @@ class ccgcommon::environment (
     content => template('environment.erb')
   }
 }
+
+
+class ccgcommon::sydney-environment {
+  class { 'ccgcommon::environment':
+    http_proxy => 'http://ccg-syd-nginx-staging.ec2.ccgapps.com.au:3128',
+  }
+}
