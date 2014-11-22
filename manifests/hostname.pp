@@ -1,5 +1,6 @@
 #
 class ccgcommon::hostname {
+  include stdlib
   if $custom_hostname {
     class { 'ccgcommon::hostname::setup':
       stage    => 'setup',
