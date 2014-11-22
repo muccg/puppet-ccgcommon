@@ -1,6 +1,6 @@
 #
 class ccgcommon::hostname {
-  if defined('$custom_hostname') {
+  if $custom_hostname {
     class { 'ccgcommon::hostname::setup':
       stage    => 'setup',
     }
