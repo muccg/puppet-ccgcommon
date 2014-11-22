@@ -6,7 +6,7 @@ class ccgcommon::environment (
   ) {
 
   file { '/etc/environment':
-    content => template('environment.erb')
+    content => template('ccgcommon/environment.erb')
   }
 }
 
