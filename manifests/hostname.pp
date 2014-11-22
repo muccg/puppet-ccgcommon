@@ -4,14 +4,15 @@ class ccgcommon::hostname {
   if $custom_hostname {
     class { 'ccgcommon::hostname::setup':
       stage    => 'setup',
+      hostname => $custom_hostname,
     }
   }
 }
 
 
-class ccgcommon::hostname::setup {
+class ccgcommon::hostname::setup ($hostname) {
   file { '/etc/hostname':
-    content => "$custom_hostname",
+    content => "$hostname",
   }
 
   exec { 'set hostname':

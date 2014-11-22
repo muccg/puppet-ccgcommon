@@ -1,7 +1,6 @@
 #
 class ccgcommon (
   $timezone=$ccgcommon::params::timezone,
-  $hostname=undef,
 ) inherits ccgcommon::params {
 
   include stdlib
@@ -16,14 +15,6 @@ class ccgcommon (
   class { 'fail2ban':
     ignoreip => ['134.115.67.200', '134.115.67.200', '127.0.0.1/8'],
     require  => Class['timezone'],
-  }
-
-  if $hostname != undef {
-    exec { "/bin/hostname ${hostname}": }
-
-    file { '/etc/hostname':
-      content => $hostname,
-    }
   }
 
   # $ssh_user is a fact injected by ccgplatform
