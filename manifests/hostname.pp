@@ -15,7 +15,9 @@ class ccgcommon::hostname::setup {
   }
 
   exec { 'set hostname':
-    command => '/bin/hostname `/bin/cat /etc/hostname`',
-    require => File['/etc/hostname'],
+    command     => '/bin/hostname `/bin/cat /etc/hostname`',
+    refreshonly => true,
+    subscribe   => File['/etc/hostname'],
+    require     => File['/etc/hostname'],
   }
 }
