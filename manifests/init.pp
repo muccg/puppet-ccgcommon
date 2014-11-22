@@ -13,7 +13,7 @@ class ccgcommon (
   }
 
   class { 'fail2ban':
-    ignoreip => ['134.115.67.200', '134.115.67.200', '127.0.0.1/8'],
+    ignoreip => ['134.115.67.200', '127.0.0.1/8'],
     require  => Class['timezone'],
   }
 
