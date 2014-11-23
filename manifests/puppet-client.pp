@@ -7,8 +7,10 @@ class ccgcommon::puppet-client (
   $runmode       = 'service',
   ) {
 
-  # templatedir and environment are not explicity passed through
-  # but they are used in the puppet.conf template
+  # environment is not explicity passed through
+  # but is used in the puppet.conf template
+  #
+  # TODO: templatedir is not being respected just yet
 
   class { '::puppet':
     agent         => $agent,
@@ -18,9 +20,12 @@ class ccgcommon::puppet-client (
 }
 
 
-class ccgcommon::puppet-client::sydney {
+class ccgcommon::puppet-client::sydney (
+  $runmode       = 'service',
+  ) {
   class { 'ccgcommon::puppet-client':
     puppet_master => 'ccg-syd-puppet-master.ec2.ccgapps.com.au',
     environment   => $puppet_environment,
+    runmode       => $runmode,
   }
 }
