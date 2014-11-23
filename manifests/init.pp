@@ -4,7 +4,6 @@ class ccgcommon (
 ) inherits ccgcommon::params {
 
   include stdlib
-  include repo::update
   include ccgcommon::sudoers
 
   class { 'timezone':
