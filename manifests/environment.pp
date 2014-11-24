@@ -12,7 +12,5 @@ class ccgcommon::environment (
 
 
 class ccgcommon::environment::sydney {
-  class { 'ccgcommon::environment':
-    http_proxy => 'http://ccg-syd-nginx-staging.ec2.ccgapps.com.au:3128',
-  }
+  class { 'ccgcommon::environment': }
 }
