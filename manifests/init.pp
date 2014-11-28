@@ -5,6 +5,7 @@ class ccgcommon (
 
   include stdlib
   include ccgcommon::sudoers
+  include ccgcommon::hostname
 
   class { 'timezone':
     timezone => $timezone,
