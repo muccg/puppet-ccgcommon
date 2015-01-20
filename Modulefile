@@ -1,5 +1,5 @@
 name         'muccg-ccgcommon'
-version      '1.4.5'
+version      '1.5.0'
 
 author       'Centre for Comparative Genomics'
 license      'GNU GPL Version 3'
@@ -13,4 +13,3 @@ dependency 'saz/timezone', '>=3.0.1 <3.1.0'
 dependency 'netmanagers/fail2ban', '>=1.4.0 <2.0.0'
 dependency 'saz/rsyslog', '>=3.4.0 <4.0.0'
 dependency 'puppetlabs/concat', '>=1.0.2 <2.0.0'
-dependency 'theforeman/puppet', '>=2.3.0 <3.0.0'
