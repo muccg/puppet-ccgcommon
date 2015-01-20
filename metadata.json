@@ -8,6 +8,6 @@
   "project_page": "https://github.com/muccg/puppet-ccgpuppet",
   "dependencies": [
     {"name":"jsosic/cobbler",
-     "version_requirement":">= 1.0.0"}
+     "version_requirement":">=1.2.0"}
   ]
 }
