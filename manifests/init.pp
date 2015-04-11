@@ -12,7 +12,8 @@ class ccgcommon (
   }
 
   class { 'fail2ban':
-    ignoreip => ['134.115.67.200', '127.0.0.1/8'],
+    config_dir_purge  => true,
+    config_dir_source => "puppet:///modules/fail2ban/${::lsbdistcodename}/etc/fail2ban",
     require  => Class['timezone'],
   }
 
