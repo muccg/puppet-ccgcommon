@@ -13,7 +13,7 @@ class ccgcommon (
 
   class { 'fail2ban':
     config_dir_purge  => true,
-    config_dir_source => "puppet:///modules/fail2ban/${::lsbdistcodename}/etc/fail2ban",
+    config_file_template => "fail2ban/${::lsbdistcodename}/etc/fail2ban/jail.conf.erb",
     require  => Class['timezone'],
   }
 
