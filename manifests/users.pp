@@ -4,7 +4,7 @@ class ccgcommon::users (
   $groups          = undef,
   $authorized_keys = undef,
 ){
-  if $groups
+  if $groups {
     create_resources(group, $groups)
   }
 

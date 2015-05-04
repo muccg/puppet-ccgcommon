@@ -8,8 +8,8 @@ class ccgcommon::docker {
   }
 
   file { '/data':
-    ensure  => 'directory',
-    owner   => 'ubuntu',
+    ensure => 'directory',
+    owner  => 'ubuntu',
   }
 
   user { 'ubuntu':

@@ -12,7 +12,7 @@ class ccgcommon::hostname {
 
 class ccgcommon::hostname::setup ($hostname) {
   file { '/etc/hostname':
-    content => "$hostname",
+    content => $hostname,
   }
 
   exec { 'set hostname':
