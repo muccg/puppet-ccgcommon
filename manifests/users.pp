@@ -4,15 +4,15 @@ class ccgcommon::users (
   $groups          = undef,
   $authorized_keys = undef,
 ){
-  if defined ('groups') {
+  if $groups
     create_resources(group, $groups)
   }
 
-  if defined ('users') {
+  if $users {
     create_resources(user, $users)
   }
 
-  if defined ('authorized_keys') {
+  if $authorized_keys {
     create_resources(ssh_authorized_key, $authorized_keys)
   }
 }
