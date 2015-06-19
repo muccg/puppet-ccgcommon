@@ -17,10 +17,6 @@ class ccgcommon::docker (
     owner  => 'ubuntu',
   }
 
-  user { 'ubuntu':
-    groups => ['docker', 'ubuntu'],
-  }
-
 }
 
 class ccgcommon::dockerimages {
