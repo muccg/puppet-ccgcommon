@@ -1,19 +1,20 @@
 #
-class ccgcommon::docker {
+class ccgcommon::docker (
+  $manage_package = false,
+  $use_upstream_package_source = false,
+  $manage_kernel = false,
+) {
 
   class { '::docker':
     extra_parameters            => ['-g /docker'],
-    manage_package              => false,
-    use_upstream_package_source => false,
+    manage_package              => $manage_package,
+    manage_kernel               => $manage_kernel,
+    use_upstream_package_source => $use_upstream_package_source,
   }
 
   file { '/data':
     ensure => 'directory',
     owner  => 'ubuntu',
-  }
-
-  user { 'ubuntu':
-    groups => ['docker', 'ubuntu'],
   }
 
 }
