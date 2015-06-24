@@ -12,9 +12,10 @@ class ccgcommon (
   }
 
   class { 'fail2ban':
-    config_dir_purge     => true,
-    config_file_template => "fail2ban/${::lsbdistcodename}/etc/fail2ban/jail.conf.erb",
-    require              => Class['timezone'],
+    jails_config   => 'file',
+    jails_template => 'fail2ban/jail.local.erb',
+    jails          => ['ssh', ],
+    require        => Class['timezone'],
   }
 
   # $ssh_user is a fact injected by ccgplatform
