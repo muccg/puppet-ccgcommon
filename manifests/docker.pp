@@ -1,12 +1,13 @@
 #
 class ccgcommon::docker (
-  $manage_package = false,
+  $manage_package              = false,
   $use_upstream_package_source = false,
-  $manage_kernel = false,
+  $manage_kernel               = false,
+  $extra_parameters            = [ '-g /docker', '--dns 8.8.8.8', '--dns 8.8.4.4', ]
 ) {
 
   class { '::docker':
-    extra_parameters            => ['-g /docker'],
+    extra_parameters            => $extra_parameters,
     manage_package              => $manage_package,
     manage_kernel               => $manage_kernel,
     use_upstream_package_source => $use_upstream_package_source,
