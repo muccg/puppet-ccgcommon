@@ -13,11 +13,6 @@ class ccgcommon::docker (
     use_upstream_package_source => $use_upstream_package_source,
   }
 
-  file { '/data':
-    ensure => 'directory',
-    owner  => 'ubuntu',
-  }
-
 }
 
 class ccgcommon::dockerimages {
